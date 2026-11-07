@@ -20,9 +20,6 @@ Only 8.1% of delivered orders arrive late, but those orders produce most of the 
 7. **Distance is a small factor.** Orders inside one state are late 6.0% of the time, orders across states 9.0%.
 8. **Late rate peaks in busy months:** March 2018 (21.4%), February 2018 (16.0%) and November 2017 (14.3%).
 
-![Review score by delay](outputs/1_review_by_delay.png)
-![Late rate by state](outputs/2_late_by_state.png)
-![Late rate by month](outputs/5_late_by_month.png)
 
 ## Recommendations
 **Operations**
