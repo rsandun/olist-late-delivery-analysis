@@ -5,7 +5,7 @@ Author: Sandun Lakshan Ranathunga
 
 How do late deliveries affect customers and revenue at a Brazilian online marketplace, and what should Operations and Marketing each do about it?
 
-![Dashboard overview](outputs/dashboard_overview.png)
+![Dashboard overview](dashboard_overview.png)
 
 ## Summary
 Only 8.1% of delivered orders arrive late, but those orders produce most of the unhappy customers. A late order is about 6 times more likely to get a bad review (54.0% vs 9.2%). About 5,000 orders that are more than 3 days late hold roughly 90% of the revenue at risk. The problem is worst by rate in the north-east of Brazil, and biggest in money in São Paulo and Rio de Janeiro.
