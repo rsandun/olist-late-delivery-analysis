@@ -93,4 +93,3 @@ The data files are not included in this repository.
 Python (pandas, matplotlib), HTML/CSS
 
 ---
-Built with AI assistance (Claude). I chose the project goal and ran the analysis on my own computer. Claude wrote most of the code and the written text.
