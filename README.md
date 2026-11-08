@@ -5,7 +5,7 @@ Author: Sandun Lakshan Ranathunga
 
 How do late deliveries affect customers and revenue at a Brazilian online marketplace, and what should Operations and Marketing each do about it?
 
-![Dashboard overview](dashboard_overview.png)
+![Dashboard overview](visuals/dashboard_overview.png)
 
 ## Summary
 Only 8.1% of delivered orders arrive late, but those orders produce most of the unhappy customers. A late order is about 6 times more likely to get a bad review (54.0% vs 9.2%). About 5,000 orders that are more than 3 days late hold roughly 90% of the revenue at risk. The problem is worst by rate in the north-east of Brazil, and biggest in money in São Paulo and Rio de Janeiro.
@@ -20,6 +20,43 @@ Only 8.1% of delivered orders arrive late, but those orders produce most of the 
 7. **Distance is a small factor.** Orders inside one state are late 6.0% of the time, orders across states 9.0%.
 8. **Late rate peaks in busy months:** March 2018 (21.4%), February 2018 (16.0%) and November 2017 (14.3%).
 
+## Charts
+
+**Review score by delay.** The score falls with every extra day, and drops sharply after 3 days.
+
+![Review score by delay](visuals/1_review_by_delay.png)
+
+**Late rate by state.** The north-east states are the highest.
+
+![Late rate by state](visuals/2_late_by_state.png)
+
+**Late rate by category.** All categories are close together, so product type is not the cause.
+
+![Late rate by category](visuals/3_late_by_category.png)
+
+**Top sellers by revenue at risk.** Seller IDs are anonymised in the dataset.
+
+![Top sellers by revenue at risk](visuals/4_sellers_at_risk.png)
+
+**Late rate by month.** Peaks in March 2018, February 2018 and November 2017.
+
+![Late rate by month](visuals/5_late_by_month.png)
+
+**Revenue at risk by state.** São Paulo and Rio de Janeiro hold about half of it, because they have the most orders.
+
+![Revenue at risk by state](visuals/6_risk_by_state.png)
+
+**Promised vs real delivery time.** Olist already promises longer in the north-east, so a longer promise is not the fix.
+
+![Promised vs real delivery time](visuals/7_promised_vs_real.png)
+
+**Share of orders vs share of revenue at risk.** Orders more than 3 days late are a small share of orders but most of the risk.
+
+![Share of orders and revenue at risk by delay group](visuals/8_risk_share_by_delay.png)
+
+**Voucher scenarios.** The plan loses money in the worst case and gains in the normal and best cases. The recovery rates are assumptions.
+
+![Voucher scenarios](visuals/9_voucher_scenarios.png)
 
 ## Recommendations
 **Operations**
@@ -62,30 +99,31 @@ More definitions are in `business_brief.md`.
 - Data cleaning was light. There was no deep check for duplicates or unusual values.
 
 ## Project files
-| File | What it is |
+| Location | What it is |
 |---|---|
-| `notebook/03_analysis.ipynb` | Full analysis in Python |
-| `notebook/01_data_check.ipynb` | First check that all files load |
-| `outputs/dashboard.html` | HTML dashboard (open in a browser) |
-| `outputs/` | Chart and dashboard images |
+| `analysis/` | `03_analysis.ipynb` (full analysis in Python) and `01_data_check.ipynb` (first check that all files load) |
+| `visuals/` | `dashboard.html` (download it and open it in a browser), `dashboard_overview.png`, and the chart images `1_` to `9_` |
 | `business_brief.md` | Problem, goals, and KPI definitions |
 | `executive_summary.md` | One-page summary for managers |
 
 <!--
-POWER BI VERSION: remove this comment line and the closing line below once the dashboards are built and the screenshots are in the outputs folder.
+POWER BI VERSION: remove this comment line and the closing line below once the dashboards are built and the screenshots are uploaded to the visuals folder.
 
 ## Power BI version
-![Power BI overview](outputs/powerbi_1_overview.png)
-![Power BI where](outputs/powerbi_2_where.png)
-![Power BI money](outputs/powerbi_3_money.png)
-![Power BI actions](outputs/powerbi_4_actions.png)
+![Power BI overview](visuals/powerbi_1_overview.png)
+![Power BI where](visuals/powerbi_2_where.png)
+![Power BI money](visuals/powerbi_3_money.png)
+![Power BI actions](visuals/powerbi_4_actions.png)
+
+When the Power BI report is finished, add this to the note at the bottom: I built the Power BI dashboard myself, with Claude advising on structure.
 -->
 
 ## How to rerun
 1. Download the Brazilian E-Commerce Public Dataset by Olist from Kaggle. Check its license there.
-2. Put the CSV files in a folder called `data` next to `notebook`.
-3. Install the tools: `pip install pandas matplotlib`
-4. Open `notebook/03_analysis.ipynb` and click **Run All**.
+2. On your computer, make a folder with two sub-folders: `analysis` and `data`.
+3. Put the two notebooks in `analysis`, and the Olist CSV files in `data`. The notebook reads the files from `../data/`.
+4. Install the tools: `pip install pandas matplotlib`
+5. Open `03_analysis.ipynb` and click **Run All**. The charts are saved in a new `outputs` folder.
 
 The data files are not included in this repository.
 
